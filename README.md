@@ -25,3 +25,12 @@ Tambien se puede realizar desde la terminal utilizando por ejemplo Invoke-WebReq
 Para esto debemos abrir una nueva terminal y ejecutar la siguiente linea:
 
 Invoke-WebRequest -Method POST -Uri "http://localhost:5000/predict" -Body '["9.8", "11.2", "0.28", "0.56", "1.9", "0.075", "17.0", "60.0", "0.9980", "3.16", "0.58"]' -ContentType "application/json"
+
+
+Breve descripción del codigo del modelo de ML
+
+Utilizamos para el ejercicio la base de datos wine para predecir la calidad del vino. 
+Después de chequear la base, procedemos a borrar registros duplicados y registros outliers. Una vez hecho estos cambios procedemos a separar los labels del df original y separar en dos para entrenar y testear el modelo. 
+Definimos a su vez un pipeline escalando los los regresores numericos y utilizamos un modelo random forest para entrenarlo. También realizmaos la búsqueda de los mejores hyperparametros y terminamos mostrando el scrore y una matriz de confusión para ver qué tan bueno fue nuestro modelo. 
+
+Al final se guarda el modelo como pkl para luego proceder a hacer los demás pasos. 
